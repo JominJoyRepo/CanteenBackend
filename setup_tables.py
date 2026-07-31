@@ -23,6 +23,11 @@ Before running this script, create the tables in your Supabase SQL editor:
         data JSONB NOT NULL
     );
 
+    CREATE TABLE IF NOT EXISTS documents_tokens (
+        name TEXT PRIMARY KEY,
+        data JSONB NOT NULL
+    );
+
     ALTER TABLE documents_store1 ADD COLUMN IF NOT EXISTS "user" TEXT;
     ALTER TABLE documents_store2 ADD COLUMN IF NOT EXISTS "user" TEXT;
 
@@ -35,7 +40,7 @@ from db import supabase
 
 DATA_DIR = Path(__file__).resolve().parent / 'data'
 
-TABLES = ['documents_stores', 'documents_store1', 'documents_store2', 'documents_userlist']
+TABLES = ['documents_stores', 'documents_store1', 'documents_store2', 'documents_userlist', 'documents_tokens']
 
 
 def tables_exist() -> bool:

@@ -1,4 +1,6 @@
+import hashlib
 import secrets
+from datetime import datetime, timedelta, timezone
 
 from fastapi import APIRouter, HTTPException
 
@@ -7,18 +9,42 @@ from utils.logger import logger
 
 router = APIRouter(prefix='/api/auth', tags=['auth'])
 
+TOKEN_TTL_DAYS = 30
 _tokens: dict[str, str] = {}
 
 
-def get_username_from_token(token: str):
-    return _tokens.get(token)
+def _hash_token(token: str) -> str:
+    return hashlib.sha256(token.encode()).hexdigest()
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
 
 
 def verify_token(token: str) -> str:
-    username = _tokens.get(token)
-    if username is None:
+    if not token:
         raise HTTPException(status_code=401, detail='Invalid or expired token')
+    username = _tokens.get(token)
+    if username is not None:
+        return username
+    token_hash = _hash_token(token)
+    result = execute(supabase.table('documents_tokens').select('data').eq('name', token_hash))
+    if not result.data:
+        raise HTTPException(status_code=401, detail='Invalid or expired token')
+    data = result.data[0]['data']
+    if data.get('expires_at') and data['expires_at'] < _now_iso():
+        execute(supabase.table('documents_tokens').delete().eq('name', token_hash))
+        raise HTTPException(status_code=401, detail='Invalid or expired token')
+    username = data['username']
+    _tokens[token] = username
     return username
+
+
+def _prune_expired_tokens():
+    try:
+        execute(supabase.table('documents_tokens').delete().lt('data->>expires_at', _now_iso()))
+    except Exception as e:
+        logger.warning(f'Failed to prune expired tokens: {e}')
 
 
 @router.post('/login')
@@ -40,7 +66,14 @@ def login(body: dict):
             logger.warning('Login failed: wrong password', extra={'username': username})
             raise HTTPException(status_code=401, detail='Invalid username or password')
 
+        _prune_expired_tokens()
+
         token = secrets.token_hex(32)
+        expires_at = (datetime.now(timezone.utc) + timedelta(days=TOKEN_TTL_DAYS)).isoformat()
+        execute(supabase.table('documents_tokens').upsert({
+            'name': _hash_token(token),
+            'data': {'username': username, 'expires_at': expires_at}
+        }))
         _tokens[token] = username
         logger.info('Login successful', extra={'username': username})
         return {'token': token, 'username': username}
@@ -56,9 +89,10 @@ def login(body: dict):
 def logout(body: dict = None):
     try:
         token = (body or {}).get('token')
-        if token and token in _tokens:
-            username = _tokens.pop(token)
-            logger.info('Logout successful', extra={'username': username})
+        if token:
+            _tokens.pop(token, None)
+            execute(supabase.table('documents_tokens').delete().eq('name', _hash_token(token)))
+            logger.info('Logout successful')
         return {'success': True}
     except Exception as e:
         logger.error(f'Failed to logout: {e}')
