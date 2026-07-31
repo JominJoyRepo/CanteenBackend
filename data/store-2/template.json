@@ -1,0 +1,58 @@
+{
+  "categories": [
+    {
+      "id": "veg",
+      "name": "Vegetables",
+      "items": [
+        { "id": "tomato", "name": "Tomato", "unit": "kg", "openStock": 5, "price": 40 },
+        { "id": "potato", "name": "Potato", "unit": "kg", "openStock": 10, "price": 30 },
+        { "id": "onion", "name": "Onion", "unit": "kg", "openStock": 8, "price": 35 },
+        { "id": "brinjal", "name": "Brinjal", "unit": "kg", "openStock": 3, "price": 25 },
+        { "id": "cabbage", "name": "Cabbage", "unit": "kg", "openStock": 2, "price": 20 },
+        { "id": "cauliflower", "name": "Cauliflower", "unit": "kg", "openStock": 2, "price": 30 }
+      ]
+    },
+    {
+      "id": "dairy",
+      "name": "Dairy Products",
+      "items": [
+        { "id": "milk", "name": "Milk", "unit": "litre", "openStock": 10, "price": 60 },
+        { "id": "curd", "name": "Curd", "unit": "kg", "openStock": 5, "price": 80 },
+        { "id": "paneer", "name": "Paneer", "unit": "kg", "openStock": 3, "price": 120 },
+        { "id": "butter", "name": "Butter", "unit": "kg", "openStock": 2, "price": 200 },
+        { "id": "cheese", "name": "Cheese", "unit": "kg", "openStock": 2, "price": 250 }
+      ]
+    },
+    {
+      "id": "grains",
+      "name": "Grains & Pulses",
+      "items": [
+        { "id": "rice", "name": "Rice", "unit": "kg", "openStock": 25, "price": 40 },
+        { "id": "wheat", "name": "Wheat Flour", "unit": "kg", "openStock": 20, "price": 25 },
+        { "id": "dal", "name": "Toor Dal", "unit": "kg", "openStock": 10, "price": 90 },
+        { "id": "chana", "name": "Chana Dal", "unit": "kg", "openStock": 8, "price": 80 },
+        { "id": "moong", "name": "Moong Dal", "unit": "kg", "openStock": 5, "price": 85 }
+      ]
+    },
+    {
+      "id": "spices",
+      "name": "Spices & Condiments",
+      "items": [
+        { "id": "turmeric", "name": "Turmeric Powder", "unit": "kg", "openStock": 2, "price": 200 },
+        { "id": "chilli", "name": "Chilli Powder", "unit": "kg", "openStock": 3, "price": 150 },
+        { "id": "coriander", "name": "Coriander Powder", "unit": "kg", "openStock": 2, "price": 120 },
+        { "id": "cumin", "name": "Cumin Seeds", "unit": "kg", "openStock": 2, "price": 180 },
+        { "id": "salt", "name": "Salt", "unit": "kg", "openStock": 5, "price": 15 }
+      ]
+    },
+    {
+      "id": "oil",
+      "name": "Oils & Ghee",
+      "items": [
+        { "id": "cooking-oil", "name": "Cooking Oil", "unit": "litre", "openStock": 10, "price": 160 },
+        { "id": "ghee", "name": "Ghee", "unit": "kg", "openStock": 5, "price": 400 },
+        { "id": "mustard-oil", "name": "Mustard Oil", "unit": "litre", "openStock": 8, "price": 150 }
+      ]
+    }
+  ]
+}

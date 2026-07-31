@@ -1,0 +1,114 @@
+2026-07-24 11:00:24 [INFO] Server running on http://localhost:3000
+2026-07-24 11:03:22 [INFO] Server running on http://localhost:3000
+2026-07-24 11:04:51 [INFO] Server running on http://localhost:3000
+2026-07-24 11:05:15 [INFO] Server running on http://localhost:3000
+2026-07-24 11:06:07 [INFO] Record saved
+2026-07-24 11:09:56 [INFO] Record saved
+2026-07-24 11:22:50 [INFO] Server running on http://localhost:3000
+2026-07-24 11:23:31 [INFO] Record saved
+2026-07-24 11:43:10 [INFO] Record saved
+2026-07-24 11:43:41 [INFO] Record saved
+2026-07-24 12:04:51 [ERROR] Failed to load categories
+2026-07-24 12:05:01 [ERROR] Failed to load categories
+2026-07-24 12:05:10 [ERROR] Failed to load categories
+2026-07-24 12:05:30 [ERROR] Failed to load categories
+2026-07-24 12:05:50 [ERROR] Failed to load categories
+2026-07-24 12:05:52 [ERROR] Failed to load categories
+2026-07-24 12:08:20 [ERROR] Failed to load categories
+2026-07-24 12:09:00 [ERROR] Failed to load categories
+2026-07-24 12:10:41 [INFO] Server running on http://localhost:3000
+2026-07-24 12:10:46 [ERROR] Failed to load categories
+2026-07-24 12:12:12 [INFO] Server running on http://localhost:3000
+2026-07-24 12:13:00 [INFO] Server running on http://localhost:3000
+2026-07-24 12:13:26 [INFO] Server running on http://localhost:3000
+2026-07-24 12:13:47 [INFO] Server running on http://localhost:3000
+2026-07-24 12:15:00 [INFO] Server running on http://localhost:3000
+2026-07-24 12:16:45 [INFO] Record saved
+2026-07-24 12:24:10 [INFO] Server running on http://localhost:3000
+2026-07-24 12:29:46 [INFO] Server running on http://localhost:3000
+2026-07-24 12:30:59 [INFO] Record saved
+2026-07-24 12:38:54 [INFO] Server running on http://localhost:3000
+2026-07-24 12:40:07 [INFO] Record saved
+2026-07-24 12:49:29 [INFO] Server running on http://localhost:3000
+2026-07-24 13:52:01 [INFO] Server running on http://localhost:3000
+2026-07-24 13:53:45 [INFO] Record saved
+2026-07-24 13:54:15 [INFO] Record saved
+2026-07-24 13:55:34 [INFO] Record saved
+2026-07-24 18:10:33 [INFO] Server running on http://localhost:3000
+2026-07-24 18:12:58 [INFO] Record saved
+2026-07-24 19:03:47 [INFO] Record saved
+2026-07-24 19:04:14 [INFO] Record saved
+2026-07-24 19:05:36 [INFO] Record saved
+2026-07-24 21:25:40 [INFO] Server running on http://localhost:3000
+2026-07-24 21:26:01 [INFO] Record saved
+2026-07-24 21:26:17 [ERROR] Failed to save record
+2026-07-24 21:27:14 [ERROR] Failed to save record
+2026-07-24 21:30:45 [INFO] Record saved
+2026-07-24 21:31:00 [INFO] Record saved
+2026-07-24 21:32:11 [INFO] Server running on http://localhost:3000
+2026-07-24 21:33:02 [ERROR] Failed to save record
+2026-07-24 21:33:19 [ERROR] Failed to save record
+2026-07-24 21:33:55 [INFO] Record saved
+2026-07-24 21:34:29 [ERROR] Failed to save record
+2026-07-24 21:40:16 [INFO] Server running on http://localhost:3000
+2026-07-24 21:40:53 [INFO] Record updated
+2026-07-24 21:41:01 [INFO] Record saved
+2026-07-24 21:41:27 [INFO] Record updated
+2026-07-24 21:41:41 [INFO] Record saved
+2026-07-24 22:49:39 [INFO] Server running on http://localhost:3000
+2026-07-24 22:51:53 [INFO] Record updated
+2026-07-24 22:59:18 [INFO] Server running on http://localhost:3000
+2026-07-24 23:32:45 [INFO] Record saved
+2026-07-27 20:00:25 [INFO] Server running on http://localhost:3000
+2026-07-27 20:01:01 [INFO] Record saved
+2026-07-27 20:02:54 [INFO] Record updated
+2026-07-27 20:03:02 [INFO] Summary saved
+2026-07-27 20:03:26 [INFO] Summary saved
+2026-07-27 21:23:36 [INFO] Server running on http://localhost:3000
+2026-07-27 21:23:54 [INFO] Record saved
+2026-07-27 21:27:28 [INFO] Summary saved
+2026-07-27 22:25:29 [INFO] Record updated
+2026-07-27 22:26:41 [INFO] Summary saved
+2026-07-30 19:35:35 [INFO] Server running on http://localhost:3000
+2026-07-30 19:35:49 [INFO] Item price updated
+2026-07-30 19:37:52 [INFO] Server running on http://localhost:3000
+2026-07-30 19:38:18 [INFO] Record saved
+2026-07-30 19:38:38 [INFO] Summary saved
+2026-07-30 19:40:00 [INFO] Summary saved
+2026-07-31 14:47:23 [INFO] Server running on http://localhost:3000
+2026-07-31 14:47:44 [INFO] Server running on http://localhost:3000
+2026-07-31 14:53:42 [INFO] Server running on http://localhost:3000
+2026-07-31 14:53:55 [INFO] Server running on http://localhost:3000
+2026-07-31 14:55:05 [INFO] Server running on http://localhost:3000
+2026-07-31 14:55:44 [INFO] Login successful
+2026-07-31 14:55:44 [WARNING] Login failed: wrong password
+2026-07-31 14:57:02 [INFO] Login successful
+2026-07-31 15:06:13 [INFO] Server running on http://localhost:3000
+2026-07-31 15:07:23 [INFO] Server running on http://localhost:3000
+2026-07-31 15:08:52 [INFO] Login successful
+2026-07-31 15:08:53 [INFO] Record saved
+2026-07-31 15:12:41 [INFO] Server running on http://localhost:3000
+2026-07-31 15:13:28 [INFO] Server running on http://localhost:3000
+2026-07-31 15:17:09 [INFO] Login successful
+2026-07-31 15:17:26 [INFO] Record saved
+2026-07-31 15:18:36 [INFO] Record saved
+2026-07-31 15:28:32 [INFO] Server running on http://localhost:3000
+2026-07-31 15:31:39 [INFO] Server running on http://localhost:3000
+2026-07-31 15:31:56 [INFO] Login successful
+2026-07-31 15:31:57 [INFO] Record saved
+2026-07-31 15:32:05 [INFO] Login successful
+2026-07-31 15:32:05 [INFO] Record updated
+2026-07-31 15:32:29 [INFO] Server running on http://localhost:3000
+2026-07-31 15:32:40 [INFO] Server running on http://localhost:3000
+2026-07-31 15:33:27 [INFO] Login successful
+2026-07-31 15:33:55 [INFO] Record updated
+2026-07-31 15:42:30 [INFO] Server running on http://localhost:3000
+2026-07-31 15:43:25 [INFO] Server running on http://localhost:3000
+2026-07-31 15:43:51 [INFO] Login successful
+2026-07-31 15:44:28 [INFO] Record saved
+2026-07-31 15:45:25 [INFO] Record saved
+2026-07-31 15:45:57 [INFO] Record updated
+2026-07-31 15:46:15 [INFO] Summary saved
+2026-07-31 16:01:16 [INFO] Server running on http://localhost:3000
+2026-07-31 16:01:25 [INFO] Login successful
+2026-07-31 16:01:52 [INFO] Server running on http://localhost:3000

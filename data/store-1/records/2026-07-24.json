@@ -1,0 +1,106 @@
+{
+  "date": "2026-07-24",
+  "storeId": "store-1",
+  "entries": [
+    {
+      "categoryId": "veg",
+      "categoryName": "Vegetables",
+      "items": [
+        {
+          "id": "tomato",
+          "name": "Tomato",
+          "unit": "kg",
+          "openStock": 5,
+          "closedStock": 15,
+          "price": 40
+        },
+        {
+          "id": "potato",
+          "name": "Potato",
+          "unit": "kg",
+          "openStock": 10,
+          "closedStock": null,
+          "price": 30
+        },
+        {
+          "id": "onion",
+          "name": "Onion",
+          "unit": "kg",
+          "openStock": 8,
+          "closedStock": null,
+          "price": 35
+        },
+        {
+          "id": "brinjal",
+          "name": "Brinjal",
+          "unit": "kg",
+          "openStock": 3,
+          "closedStock": null,
+          "price": 25
+        },
+        {
+          "id": "cabbage",
+          "name": "Cabbage",
+          "unit": "kg",
+          "openStock": 2,
+          "closedStock": 30,
+          "price": 20
+        },
+        {
+          "id": "cauliflower",
+          "name": "Cauliflower",
+          "unit": "kg",
+          "openStock": 2,
+          "closedStock": null,
+          "price": 30
+        }
+      ]
+    },
+    {
+      "categoryId": "dairy",
+      "categoryName": "Dairy Products",
+      "items": [
+        {
+          "id": "milk",
+          "name": "Milk",
+          "unit": "litre",
+          "openStock": 10,
+          "closedStock": 100,
+          "price": 60
+        },
+        {
+          "id": "curd",
+          "name": "Curd",
+          "unit": "kg",
+          "openStock": 5,
+          "closedStock": null,
+          "price": 80
+        },
+        {
+          "id": "paneer",
+          "name": "Paneer",
+          "unit": "kg",
+          "openStock": 3,
+          "closedStock": null,
+          "price": 120
+        },
+        {
+          "id": "butter",
+          "name": "Butter",
+          "unit": "kg",
+          "openStock": 2,
+          "closedStock": null,
+          "price": 200
+        },
+        {
+          "id": "cheese",
+          "name": "Cheese",
+          "unit": "kg",
+          "openStock": 2,
+          "closedStock": 24,
+          "price": 250
+        }
+      ]
+    }
+  ]
+}

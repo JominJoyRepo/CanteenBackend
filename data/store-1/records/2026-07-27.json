@@ -1,0 +1,66 @@
+{
+  "date": "2026-07-27",
+  "storeId": "store-1",
+  "entries": [
+    {
+      "categoryId": "veg",
+      "categoryName": "Vegetables",
+      "items": [
+        {
+          "id": "tomato",
+          "name": "Tomato",
+          "unit": "kg",
+          "openStock": 5,
+          "closedStock": 2,
+          "price": 40
+        },
+        {
+          "id": "potato",
+          "name": "Potato",
+          "unit": "kg",
+          "openStock": 10,
+          "closedStock": 3,
+          "price": 30
+        },
+        {
+          "id": "onion",
+          "name": "Onion",
+          "unit": "kg",
+          "openStock": 8,
+          "closedStock": null,
+          "price": 35
+        },
+        {
+          "id": "brinjal",
+          "name": "Brinjal",
+          "unit": "kg",
+          "openStock": 3,
+          "closedStock": null,
+          "price": 25
+        },
+        {
+          "id": "cabbage",
+          "name": "Cabbage",
+          "unit": "kg",
+          "openStock": 2,
+          "closedStock": null,
+          "price": 20
+        },
+        {
+          "id": "cauliflower",
+          "name": "Cauliflower",
+          "unit": "kg",
+          "openStock": 2,
+          "closedStock": null,
+          "price": 30
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "cashIn": 300,
+    "cashOut": 500,
+    "cardSale": 30,
+    "diff": -100
+  }
+}

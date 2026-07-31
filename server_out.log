@@ -1,0 +1,4 @@
+[32m2026-07-31 16:01:16 [INFO] Server running on http://localhost:3000[0m
+[32m2026-07-31 16:01:25 [INFO] Login successful[0m
+INFO:     127.0.0.1:49903 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49903 - "GET /api/stores HTTP/1.1" 200 OK
