@@ -154,6 +154,37 @@ def update_record(date: str, body: dict, authorization: str = Header(None)):
         raise HTTPException(status_code=500, detail='Failed to update record')
 
 
+@router.put('/{date}/day')
+def save_day_record(date: str, body: dict, authorization: str = Header(None)):
+    try:
+        username = get_username_from_auth(authorization)
+        store_id = body.get('storeId')
+        entries = body.get('entries')
+
+        if not store_id or not isinstance(entries, list):
+            logger.warning('Missing required fields', extra={'storeId': store_id, 'entriesType': type(entries).__name__})
+            raise HTTPException(status_code=400, detail='storeId and entries are required')
+
+        records = load_records(store_id, date)
+        if records is None:
+            records = {'date': date, 'storeId': store_id, 'entries': []}
+
+        existing_summary = records.get('summary')
+        records['entries'] = entries
+        if existing_summary is not None:
+            records['summary'] = existing_summary
+
+        save_records(store_id, date, records, username)
+        logger.info('Day record saved', extra={'storeId': store_id, 'date': date, 'user': username, 'categories': len(entries)})
+        return {'success': True, 'date': date, 'storeId': store_id, 'entries': entries}
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f'Failed to save day record ({date}): {e}')
+        raise HTTPException(status_code=500, detail='Failed to save day record')
+
+
 @router.put('/{date}/summary')
 def save_summary(date: str, body: dict, authorization: str = Header(None)):
     try:
