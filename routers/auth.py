@@ -2,7 +2,7 @@ import secrets
 
 from fastapi import APIRouter, HTTPException
 
-from db import supabase
+from db import execute, supabase
 from utils.logger import logger
 
 router = APIRouter(prefix='/api/auth', tags=['auth'])
@@ -30,7 +30,7 @@ def login(body: dict):
         if not username or not password:
             raise HTTPException(status_code=400, detail='username and password are required')
 
-        result = supabase.table('documents_userlist').select('data').eq('name', username).execute()
+        result = execute(supabase.table('documents_userlist').select('data').eq('name', username))
         if not result.data:
             logger.warning('Login failed: user not found', extra={'username': username})
             raise HTTPException(status_code=401, detail='Invalid username or password')

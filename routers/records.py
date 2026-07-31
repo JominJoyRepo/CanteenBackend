@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 
 from fastapi import APIRouter, HTTPException, Header, Query
 
-from db import supabase
+from db import execute, supabase
 from routers.auth import verify_token
 from utils.logger import logger
 
@@ -24,7 +24,7 @@ def store_table(store_id: str) -> str:
 
 def load_template(store_id: str):
     table = store_table(store_id)
-    result = supabase.table(table).select('data').eq('name', 'template').execute()
+    result = execute(supabase.table(table).select('data').eq('name', 'template'))
     if not result.data:
         raise HTTPException(status_code=404, detail=f'Store "{store_id}" not found')
     return result.data[0]['data']
@@ -38,7 +38,7 @@ def get_date_str(dt: datetime = None) -> str:
 
 def load_records(store_id: str, date_str: str):
     table = store_table(store_id)
-    result = supabase.table(table).select('data', '"user"').eq('name', date_str).execute()
+    result = execute(supabase.table(table).select('data', '"user"').eq('name', date_str))
     if not result.data:
         return None
     records = result.data[0]['data']
@@ -51,7 +51,7 @@ def save_records(store_id: str, date_str: str, data: dict, username: str = None)
     payload = {'name': date_str, 'data': data}
     if username:
         payload['user'] = username
-    supabase.table(table).upsert(payload).execute()
+    execute(supabase.table(table).upsert(payload))
 
 
 @router.get('')
@@ -193,7 +193,7 @@ def save_summary(date: str, body: dict, authorization: str = Header(None)):
 def list_dates(storeId: str = Query(...)):
     try:
         table = store_table(storeId)
-        result = supabase.table(table).select('name').execute()
+        result = execute(supabase.table(table).select('name'))
         dates = sorted(
             [row['name'] for row in result.data if row['name'] not in ('template', 'store')],
             reverse=True
@@ -208,7 +208,7 @@ def list_dates(storeId: str = Query(...)):
 def get_previous_record(storeId: str = Query(...), date: str = Query(...)):
     try:
         table = store_table(storeId)
-        result = supabase.table(table).select('name').execute()
+        result = execute(supabase.table(table).select('name'))
         dates = sorted(
             [row['name'] for row in result.data if row['name'] not in ('template', 'store') and row['name'] < date]
         )

@@ -112,3 +112,5 @@
 2026-07-31 16:01:16 [INFO] Server running on http://localhost:3000
 2026-07-31 16:01:25 [INFO] Login successful
 2026-07-31 16:01:52 [INFO] Server running on http://localhost:3000
+2026-07-31 20:05:42 [WARNING] Login failed: user not found
+2026-07-31 21:22:18 [INFO] Server running on http://localhost:3000

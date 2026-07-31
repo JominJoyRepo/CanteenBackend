@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 
-from db import supabase
+from db import execute, supabase
 from utils.logger import logger
 
 router = APIRouter(prefix='/api/categories', tags=['categories'])
@@ -12,7 +12,7 @@ def store_table(store_id: str) -> str:
 
 def load_template(store_id: str):
     table = store_table(store_id)
-    result = supabase.table(table).select('data').eq('name', 'template').execute()
+    result = execute(supabase.table(table).select('data').eq('name', 'template'))
     if not result.data:
         raise HTTPException(status_code=404, detail=f'Store "{store_id}" not found')
     return result.data[0]['data']
@@ -82,7 +82,7 @@ def update_item_price(category_id: str, item_id: str, body: dict):
 
         item['price'] = new_price
         table = store_table(store_id)
-        supabase.table(table).upsert({'name': 'template', 'data': template}).execute()
+        execute(supabase.table(table).upsert({'name': 'template', 'data': template}))
 
         logger.info('Item price updated', extra={'storeId': store_id, 'categoryId': category_id, 'itemId': item_id, 'price': new_price})
         return {'success': True, 'item': item}

@@ -27,6 +27,11 @@ app.include_router(records_router)
 app.include_router(stores_router)
 
 
+@app.get('/health')
+def health():
+    return {'status': 'ok'}
+
+
 @app.exception_handler(Exception)
 async def global_error_handler(request: Request, exc: Exception):
     logger.error(f'Unhandled error ({request.method} {request.url}): {exc}')
