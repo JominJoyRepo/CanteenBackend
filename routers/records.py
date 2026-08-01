@@ -54,6 +54,13 @@ def save_records(store_id: str, date_str: str, data: dict, username: str = None)
     execute(supabase.table(table).upsert(payload))
 
 
+def normalize_items(items: list) -> list:
+    for item in items:
+        if item.get('closedStock') is None:
+            item['closedStock'] = 0
+    return items
+
+
 @router.get('')
 def get_records(storeId: str = Query(...), date: str = Query(None)):
     try:
@@ -99,7 +106,7 @@ def create_record(body: dict, authorization: str = Header(None)):
             (i for i, e in enumerate(records['entries']) if e['categoryId'] == category_id),
             None
         )
-        entry = {'categoryId': category_id, 'categoryName': category_name, 'items': items}
+        entry = {'categoryId': category_id, 'categoryName': category_name, 'items': normalize_items(items)}
 
         if existing_idx is not None:
             records['entries'][existing_idx] = entry
@@ -142,7 +149,7 @@ def update_record(date: str, body: dict, authorization: str = Header(None)):
             logger.warning('Category entry not found', extra={'storeId': store_id, 'date': date, 'categoryId': category_id})
             raise HTTPException(status_code=404, detail='Category entry not found for this date')
 
-        records['entries'][existing_idx]['items'] = items
+        records['entries'][existing_idx]['items'] = normalize_items(items)
         save_records(store_id, date, records, username)
         logger.info('Record updated', extra={'storeId': store_id, 'date': date, 'categoryId': category_id, 'user': username})
         return {'success': True, 'date': date, 'storeId': store_id, 'entry': records['entries'][existing_idx]}
@@ -170,6 +177,8 @@ def save_day_record(date: str, body: dict, authorization: str = Header(None)):
             records = {'date': date, 'storeId': store_id, 'entries': []}
 
         existing_summary = records.get('summary')
+        for entry in entries:
+            entry['items'] = normalize_items(entry.get('items') or [])
         records['entries'] = entries
         if existing_summary is not None:
             records['summary'] = existing_summary
