@@ -56,6 +56,8 @@ def save_records(store_id: str, date_str: str, data: dict, username: str = None)
 
 def normalize_items(items: list) -> list:
     for item in items:
+        if item.get('openStock') is None:
+            item['openStock'] = 0
         if item.get('closedStock') is None:
             item['closedStock'] = 0
     return items
